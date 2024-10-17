@@ -1,9 +1,12 @@
 from. veiculo import Veiculo
 
 class Carro(Veiculo):
-    def __init__(self, nome, marca, modelo, ano, valor_diario, tipo_combustivel):
-        super().__init__(nome, marca, modelo, ano, valor_diario)
+    lista_de_veiculos = []
+
+    def __init__(self, marca, modelo, ano, valor_diario, tipo_combustivel):
+        super().__init__(marca, modelo, ano, valor_diario)
         self.__tipo_combustivel = tipo_combustivel
+        Carro.lista_de_veiculos.append(self)
 
     @property
     def tipo_combustivel(self):
@@ -16,5 +19,13 @@ class Carro(Veiculo):
     def calcular_valor_aluguel(self, dias, desconto=0):
         total = super().calcular_valor_aluguel(dias, desconto)
         if dias > 7:
-            total *= 0.9 # Valor total deduzido os 10%
-        return total
+            total = total - (total * (10/100))
+            return f"Valor do aluguel do carro por {dias:.0f} dias com desconto pós 7 dias: R${total:.2f}"
+        else:
+            return f"Valor do aluguel do carro por {dias:.0f} dias: R${total:.2f}"
+        
+    def aplicar_aumento(cls, percentual):
+        for veiculo in cls.lista_de_veiculos:
+            # Acessando o atributo corretamente via Veiculo
+            novo_valor = veiculo._Veiculo__valor_diario + (veiculo._Veiculo__valor_diario * percentual / 100)
+            veiculo._Veiculo__valor_diario = novo_valor
