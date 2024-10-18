@@ -2,7 +2,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Renomeando a função que lê o arquivo para evitar conflito de nome
+from classes import Carro, Motocicleta
+
 def obter_veiculos():
     def ler_dados():
         with open('veiculos.txt', 'r', encoding='utf-8') as arquivo:
@@ -11,15 +12,10 @@ def obter_veiculos():
         dados = []
         for linha in linhas:
             tipo_veiculo, marca, modelo, ano, diaria, comb, cc = linha.strip().split(',')
-            dados.append({
-                'tipo': tipo_veiculo,
-                'marca': marca,
-                'modelo': modelo,
-                'ano': ano,
-                'diaria': diaria,
-                'combustivel': comb,
-                'cilindradas': cc
-            })
+            if tipo_veiculo.lower() == 'carro':
+                dados.append(Carro(marca, modelo, int(ano), float(diaria), comb))
+            elif tipo_veiculo.lower() == 'moto':
+                dados.append(Motocicleta(marca, modelo, int(ano), float(diaria), int(cc)))
         return dados
 
     return ler_dados()
