@@ -19,11 +19,12 @@ class Motocicleta(Veiculo):
         total = super().calcular_valor_aluguel(dias, desconto)
         if self.__cilindrada > 200:
             total += total * 0.1
-            return f"Valor do aluguel do carro por {dias:.0f} dias com moto acima de 200cc: R${total:.2f}"
+            return f"{dias:.0f} {total:.2f}"
         else:
-            return f"Valor do aluguel do carro por {dias:.0f} dias: R${total:.2f}"
+            return f"{dias:.0f} {total:.2f}"
 
     def aplicar_aumento(cls, percentual):
         for veiculo in cls.lista_de_veiculos:
             novo_valor = veiculo._Veiculo__valor_diario + (veiculo._Veiculo__valor_diario * percentual / 100)
             veiculo._Veiculo__valor_diario = novo_valor
+        return novo_valor

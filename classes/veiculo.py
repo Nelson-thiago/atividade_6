@@ -54,7 +54,7 @@ class Veiculo:
         raise NotImplementedError("Implementar nas subclasses")
     
     def __str__(self):
-        return f'Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Valor diária: {self.valor_diario}'
+        return f'{self.marca} {self.modelo} {self.ano} {self.valor_diario}'
 
 
 

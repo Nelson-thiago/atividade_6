@@ -20,12 +20,13 @@ class Carro(Veiculo):
         total = super().calcular_valor_aluguel(dias, desconto)
         if dias > 7:
             total = total - (total * (10/100))
-            return f"Valor do aluguel do carro por {dias:.0f} dias com desconto pós 7 dias: R${total:.2f}"
+            return f"{dias:.0f} {total:.2f}"
         else:
-            return f"Valor do aluguel do carro por {dias:.0f} dias: R${total:.2f}"
+            return f"{dias:.0f} {total:.2f}"
         
     def aplicar_aumento(cls, percentual):
         for veiculo in cls.lista_de_veiculos:
             # Acessando o atributo corretamente via Veiculo
             novo_valor = veiculo._Veiculo__valor_diario + (veiculo._Veiculo__valor_diario * percentual / 100)
             veiculo._Veiculo__valor_diario = novo_valor
+        return novo_valor
