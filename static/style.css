@@ -1,0 +1,182 @@
+/* Estilo básico para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo para o container principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para o título principal */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Estilo para subtítulos */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Estilo geral para tabelas */
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Estilo para o cabeçalho da tabela */
+thead th {
+    background-color: #333;
+    color: white;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+/* Estilo para as células da tabela */
+td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Linhas alternadas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover nas linhas da tabela */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Botões de ação */
+button, .btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Botão em hover */
+button:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagem ou alerta */
+.message {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Estilo para formulários */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Estilo para os campos de formulário */
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Estilo para o botão de envio */
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    button, .btn {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
