@@ -1,7 +1,13 @@
 from botcity.web import WebBot, Browser, By
 from botcity.maestro import *
 from webdriver_manager.chrome import ChromeDriverManager
-from classes import Veiculo, Carro, Motocicleta
+
+import sys
+sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\veiculo')
+sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\motocicleta')
+sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\Crro')
+from classes.carro import Carro
+from classes.motocicleta import Motocicleta
 from app import obter_veiculos
 
 BotMaestroSDK.RAISE_NOT_CONNECTED = False
@@ -23,7 +29,7 @@ def main():
     veiculos = obter_veiculos()
 
     # Local Menu - CONFIGURAR CONFORME MÁQUINA
-    bot.browse(r'C:\Users\matutino\Desktop\desafio\atividade_6\templates\menu.html')
+    bot.browse(r'http://127.0.0.1:5000/')
 
     # ---Processo de alugar veículos
     for veiculo in veiculos:
