@@ -17,45 +17,69 @@ def main():
     bot.headless = False
     bot.browser = Browser.CHROME
     bot.driver_path = ChromeDriverManager().install()
-    
 
-    # print("Iniciando a automação do formulário de produto.")
-    # formulario = FormLogin(
-    #     nome='Lucas Andrade', idade=31, sexo='Masculino', email='Lrandrade20@gmail.com', telefone='929981458913', 
-    #     assunto='Teste', mensagem='Busquem conhecimento', senha='senha123'
-    # )
+    from classes import Veiculo
+    from classes import Carro
+    from classes import Motocicleta
 
-    # # Automação Form Base
-    # bot.browse(r'C:\Users\lrand\OneDrive\Área de Trabalho\Nova pasta\poo-python-ifam\Atividades\Atividade 04\bot-formulario\html\form_base.html')
-    # bot.find_element('//*[@id="nome"]', By.XPATH).send_keys(formulario.nome)
-    # bot.wait(1000)
-    # bot.find_element('//*[@id="idade"]', By.XPATH).send_keys(formulario.idade)
-    # bot.wait(1000)
-    # bot.find_element('//*[@id="email"]', By.XPATH).send_keys(formulario.email)
-    # bot.wait(1000)
-    # bot.find_element('//*[@id="telefone"]', By.XPATH).send_keys(formulario.telefone)
-    # bot.wait(1000)
-    # bot.enter()
-    # bot.wait(3000)
+    print("Iniciando a automação do formulário de produto.")
 
-    # # Automação Form Login
-    # bot.browse(r'C:\Users\lrand\OneDrive\Área de Trabalho\Nova pasta\poo-python-ifam\Atividades\Atividade 04\bot-formulario\html\form_login.html')
-    # bot.find_element('//*[@id="email"]', By.XPATH).send_keys(formulario.email)
-    # bot.wait(1000)
-    # bot.find_element('//*[@id="senha"]', By.XPATH).send_keys(formulario.senha)
-    # bot.wait(1000)
-    # bot.enter()
-    # bot.wait(3000)
+    # Instânciando objetos
+    carro = Carro("Ford", "Fiesta", 2020, 100, "Gasolina")
+    moto = Motocicleta("Honda", "CB500", 2021, 80, 250)
 
-    # # Automação Form Contato
-    # bot.browse(r'C:\Users\lrand\OneDrive\Área de Trabalho\Nova pasta\poo-python-ifam\Atividades\Atividade 04\bot-formulario\html\form_contato.html')
-    # bot.find_element('//*[@id="assunto"]', By.XPATH).send_keys(formulario.assunto)
-    # bot.wait(1000)
-    # bot.find_element('//*[@id="mensagem"]', By.XPATH).send_keys(formulario.mensagem)
-    # bot.wait(1000)
-    # bot.enter()
-    # bot.wait(3000)
-    # print(formulario.informacao())
+    # Local Menu - CONFIGURAR CONFORME MÁQUINA
+    bot.browse(r'C:\Users\matutino\Desktop\desafio\atividade_6\templates\menu.html')
+
+    # ---Processo de alugar carro
+    bot.find_element('/html/body/ul/li[1]/a/button', By.XPATH).click()
+    bot.wait(1000)
+    bot.find_element('//*[@id="tipo_veiculo"]', By.XPATH).send_keys(carro.tipo_veiculo)
+    bot.wait(1000)
+    bot.find_element('//*[@id="marca"]', By.XPATH).send_keys(carro.tipo_veiculo)
+    bot.wait(1000)
+    bot.find_element('//*[@id="modelo"]', By.XPATH).send_keys(carro.modelo)
+    bot.wait(1000)
+    bot.find_element('//*[@id="ano"]', By.XPATH).send_keys(carro.ano)
+    bot.wait(1000)
+    bot.find_element('//*[@id="diaria"]', By.XPATH).send_keys(carro.valor_diario)
+    bot.wait(1000)
+    bot.find_element('//*[@id="combustivel"]', By.XPATH).send_keys(carro.tipo_combustivel)
+    bot.wait(1000)
+    bot.find_element('/html/body/form/input[7]', By.XPATH).click()
+    bot.wait(1000)
+
+    # Botão de voltar para o menu principal !!!!!
+    bot.find_element('', By.XPATH).click()
+    bot.wait(1000)
+
+    # Botão de ir para o processo de alugar moto
+    bot.find_element('/html/body/ul/li[2]/a/button', By.XPATH).click()
+    bot.wait(1000)
+
+    # ---- Processo de alugar moto
+    bot.find_element('//*[@id="tipo_veiculo"]', By.XPATH).send_keys(moto.tipo_veiculo)
+    bot.wait(1000)
+    bot.find_element('//*[@id="marca"]', By.XPATH).send_keys(moto.marca)
+    bot.wait(1000)
+    bot.find_element('//*[@id="modelo"]', By.XPATH).send_keys(moto.modelo)
+    bot.wait(1000)
+    bot.find_element('//*[@id="ano"]', By.XPATH).send_keys(moto.ano)
+    bot.wait(1000)
+    bot.find_element('//*[@id="diaria"]', By.XPATH).send_keys(moto.valor_diario)
+    bot.wait(1000)
+    bot.find_element('//*[@id="cc"]', By.XPATH).send_keys(moto.cilindrada)
+    bot.wait(1000)
+    bot.find_element('/html/body/form/input[7]', By.XPATH).click()
+    bot.wait(1000)
+
+    # Botão de voltar para o menu principal !!!!!
+    bot.find_element('', By.XPATH).click()
+    bot.wait(1000)
+
+    # Botão de ir para listar veiculos
+    bot.find_element('/html/body/ul/li[3]/a/button', By.XPATH).click()
+    bot.wait(1000)
 
 
 def not_found(label):
