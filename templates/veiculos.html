@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1></h1>
-    <li>
-        <a href="/"><button>retornar</button></a>
-    </li>
     <h1>Todos os veículos</h1>
+    <li>
+        <a href="/"><button>Retornar</button></a>
+    </li>
+
     <table>
         <thead>
             <tr>
@@ -25,29 +25,27 @@
             </tr>
         </thead>
         <tbody>
-            {% for dado in dados %}
+            {% for dados in dados %}
             <tr>
+                <td>{{ dados.tipo_veiculo}}</td>
+                <td>{{ dados.marca }}</td>
+                <td>{{ dados.modelo }}</td>
+                <td>{{ dados.ano }}</td>
+                <td>{{ dados.valor_diario }}</td>
                 <td>
-                    {{ dado.tipo }}
+                    {% if dados.tipo_veiculo == 'Carro' %}
+                        {{ dados.tipo_combustivel }}
+                    {% else %}
+                        <em>Não especificado</em>
+                    {% endif %}
                 </td>
                 <td>
-                    {{ dado.marca }}
-                </td>
-                <td>
-                    {{ dado.modelo }}
-                </td>
-                <td>
-                    {{ dado.ano }}
-                </td>
-                <td>
-                    {{ dado.diaria }}
-                </td>
-                <td>
-                    {{ dado.combustivel }}
-                </td>
-                <td>
-                    {{ dado.cilindradas }}
-                </td>
+                    {% if dados.tipo_veiculo == 'Moto' %}
+                        {{ dados.cilindrada }}
+                    {% else %}
+                        <em>Não especificado</em>
+                    {% endif %}
+                </td>                
             </tr>
             {% endfor %}
         </tbody>

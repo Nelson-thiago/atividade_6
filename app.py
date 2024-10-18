@@ -21,15 +21,15 @@ def obter_veiculos():
     return ler_dados()
 
 
+
 @app.route('/')
 def index():
     return render_template('menu.html')
 
 
-@app.route('/alugar_carros')
+@app.route('/adicionar_veiculo')
 def alugar_carros():
-    return render_template('carro.html')
-
+    return render_template('adicionar_veiculo.html')
 
 @app.route('/alugar_motos')
 def alugar_motos():
@@ -38,7 +38,8 @@ def alugar_motos():
 
 @app.route('/listar_veiculos')
 def listar_veiculos():
-    dados = obter_veiculos()  # Chamando a função renomeada
+    dados = obter_veiculos()  
+    print (dados)
     return render_template('veiculos.html', dados=dados)
 
 
