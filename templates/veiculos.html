@@ -11,11 +11,11 @@
     <table>
         <thead>
             <tr>
+                <th>Tipo</th>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Ano</th>
                 <th>Valor da diária</th>
-                <th>Tipo</th>
                 <th>Combustível</th>
                 <th>Cilindradas</th>
             </tr>
@@ -23,6 +23,9 @@
         <tbody>
             {% for dado in dados %}
             <tr>
+                <td>
+                    {{ dado.tipo }}
+                </td>
                 <td>
                     {{ dado.marca }}
                 </td>
@@ -34,9 +37,6 @@
                 </td>
                 <td>
                     {{ dado.diaria }}
-                </td>
-                <td>
-                    {{ dado.tipo }}
                 </td>
                 <td>
                     {{ dado.combustivel }}
