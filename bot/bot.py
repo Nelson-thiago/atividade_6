@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import sys
 sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\veiculo')
 sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\motocicleta')
-sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\Crro')
+sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\Carro')
 from classes.carro import Carro
 from classes.motocicleta import Motocicleta
 from app import obter_veiculos
