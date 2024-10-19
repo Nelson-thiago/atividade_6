@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aluguel de carro</title>
+    <title>Aluguel de Veículo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function mostrarCampos() {
+            // Pega a seleção do dropdown
+            var tipoVeiculo = document.getElementById("tipo_veiculo").value;
+            // Pega os campos de combustível e cilindrada
+            var combustivel = document.getElementById("campo_combustivel");
+            var cilindrada = document.getElementById("campo_cilindrada");
+
+            // Mostra/oculta os campos com base na seleção
+            if (tipoVeiculo === "carro") {
+                combustivel.style.display = "block";
+                cilindrada.style.display = "none";
+            } else if (tipoVeiculo === "moto") {
+                combustivel.style.display = "none";
+                cilindrada.style.display = "block";
+            } else {
+                combustivel.style.display = "none";
+                cilindrada.style.display = "none";
+            }
+        }
+    </script>
 </head>
+
 <body>
     <h1></h1>
     <li>
         <a href="/"><button>retornar</button></a>
     </li>
-    <h1>Adicionar Veiculo:</h1>
+    <h1>Adicionar Veículo:</h1>
     <form>
-        <label for="tipo_veiculo">Tipo do veiculo:</label>
-        <select name="combustivel" id="combustivel">
-            <option value=""> </option>
+        <label for="tipo_veiculo">Tipo do Veículo:</label>
+        <select id="tipo_veiculo" name="tipo_veiculo" onchange="mostrarCampos()">
+            <option value="">Selecione...</option>
             <option value="carro">Carro</option>
             <option value="moto">Moto</option>
         </select>
-        
 
         <label for="marca">Marca:</label>
         <input type="text" id="marca" name="marca" required>
 
         <label for="modelo">Modelo:</label>
         <input type="text" id="modelo" name="modelo" required>
-        
+
         <label for="ano">Ano:</label>
         <input type="number" id="ano" name="ano" required>
 
         <label for="diaria">Valor da diária:</label>
         <input type="number" id="diaria" name="diaria" required>
 
-        <label for="combustivel">Combustível:</label>
-        <input type="text" id="combustivel" name="combustivel" required>
+        <!-- Campo de Combustível (somente para Carro) -->
+        <div id="campo_combustivel" style="display: none;">
+            <label for="combustivel">Combustível:</label>
+            <input type="text" id="combustivel" name="combustivel">
+        </div>
 
-        <label for="ciliondrada">Ciliondrada:</label>
-        <input type="text" id="cc" name="cc" required>
+        <!-- Campo de Cilindrada (somente para Moto) -->
+        <div id="campo_cilindrada" style="display: none;">
+            <label for="cc">Cilindrada:</label>
+            <input type="text" id="cc" name="cc">
+        </div>
 
         <input type="submit" value="Alugar">
     </form>
 </body>
+
 </html>
