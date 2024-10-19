@@ -46,25 +46,26 @@ def main():
         bot.wait(1000)
         bot.find_element('//*[@id="ano"]', By.XPATH).send_keys(veiculo.ano)
         bot.wait(1000)
-        bot.find_element('//*[@id="diaria"]', By.XPATH).send_keys(veiculo.valor_diario)
+        bot.find_element('//*[@id="diaria"]', By.XPATH).send_keys(str(veiculo.valor_diario))
 
         # Verifique o tipo de veículo para preencher os campos apropriados
         if isinstance(veiculo, Carro):
             bot.find_element('//*[@id="combustivel"]', By.XPATH).send_keys(veiculo.tipo_combustivel)
         elif isinstance(veiculo, Motocicleta):
             bot.find_element('//*[@id="cc"]', By.XPATH).send_keys(veiculo.cilindrada)
-        
         bot.wait(1000)
+
+        # Botão de alugar
         bot.find_element('/html/body/form/input[5]', By.XPATH).click()
         bot.wait(1000)
 
-        # # Botão de voltar para o menu principal
-        # bot.find_element('/html/body/form/input[5]', By.XPATH).click()
-        # bot.wait(1000)
+        # Botão retornar menu
+        bot.find_element('/html/body/li/a/button', By.XPATH).click()
+        bot.wait(1000)
 
     # Botão de ir para listar veículos
-    bot.find_element('/html/body/ul/li[3]/a/button', By.XPATH).click()
-    bot.wait(1000)
+    bot.find_element('/html/body/ul/li[2]/a/button', By.XPATH).click()
+    bot.wait(10000)
 
 def not_found(label):
     print(f"Element not found: {label}")
