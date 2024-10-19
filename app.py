@@ -13,7 +13,7 @@ def obter_veiculos():
         for linha in linhas:
             tipo_veiculo, marca, modelo, ano, diaria, comb, cc = linha.strip().split(',')
             if tipo_veiculo.lower() == 'carro':
-                dados.append(Carro(marca, modelo, int(ano), diaria, comb))
+                dados.append(Carro(marca, modelo, int(ano), float(diaria), comb))
             elif tipo_veiculo.lower() == 'moto':
                 dados.append(Motocicleta(marca, modelo, int(ano), float(diaria), int(cc)))
         return dados
