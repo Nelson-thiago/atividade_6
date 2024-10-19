@@ -5,9 +5,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 import sys
 import os
-# sys.path.append(r'C:\Users\lrand\OneDrive\Área de Trabalho\atividade06\atividade_6\classes\motocicleta.py')
-# sys.path.append(r'C:\Users\lrand\OneDrive\Área de Trabalho\atividade06\atividade_6\classes\menu.py')
-# sys.path.append(r'C:\Users\lrand\OneDrive\Área de Trabalho\atividade06\atividade_6\classes\carro.py')
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from classes.carro import Carro
 from classes.motocicleta import Motocicleta
@@ -35,9 +32,10 @@ def main():
     bot.browse(r'http://127.0.0.1:5000/')
 
     # ---Processo de alugar veículos
+    bot.find_element('/html/body/ul/li[1]/a/button', By.XPATH).click()
+    bot.wait(1000)
+
     for veiculo in veiculos:
-        bot.find_element('/html/body/ul/li[1]/a/button', By.XPATH).click()
-        bot.wait(1000)
         bot.find_element('//*[@id="tipo_veiculo"]', By.XPATH).send_keys(veiculo.tipo_veiculo)
         bot.wait(1000)
         bot.find_element('//*[@id="marca"]', By.XPATH).send_keys(veiculo.marca)
@@ -58,10 +56,10 @@ def main():
         # Botão de alugar
         bot.find_element('/html/body/form/input[5]', By.XPATH).click()
         bot.wait(1000)
-
-        # Botão retornar menu
-        bot.find_element('/html/body/li/a/button', By.XPATH).click()
-        bot.wait(1000)
+        
+    # Botão retornar menu
+    bot.find_element('/html/body/li/a/button', By.XPATH).click()
+    bot.wait(1000)
 
     # Botão de ir para listar veículos
     bot.find_element('/html/body/ul/li[2]/a/button', By.XPATH).click()
