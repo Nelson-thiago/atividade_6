@@ -2,10 +2,13 @@ from botcity.web import WebBot, Browser, By
 from botcity.maestro import *
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 import sys
-sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\veiculo')
-sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\motocicleta')
-sys.path.append(r'C:\Users\matutino\Desktop\Zl_academy\LG academy\orientacao_obj\exercicio_6\classes\Carro')
+import os
+# sys.path.append(r'C:\Users\lrand\OneDrive\Área de Trabalho\atividade06\atividade_6\classes\motocicleta.py')
+# sys.path.append(r'C:\Users\lrand\OneDrive\Área de Trabalho\atividade06\atividade_6\classes\menu.py')
+# sys.path.append(r'C:\Users\lrand\OneDrive\Área de Trabalho\atividade06\atividade_6\classes\carro.py')
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from classes.carro import Carro
 from classes.motocicleta import Motocicleta
 from app import obter_veiculos
@@ -50,14 +53,14 @@ def main():
             bot.find_element('//*[@id="combustivel"]', By.XPATH).send_keys(veiculo.tipo_combustivel)
         elif isinstance(veiculo, Motocicleta):
             bot.find_element('//*[@id="cc"]', By.XPATH).send_keys(veiculo.cilindrada)
+        
+        bot.wait(1000)
+        bot.find_element('/html/body/form/input[5]', By.XPATH).click()
+        bot.wait(1000)
 
-        bot.wait(1000)
-        bot.find_element('/html/body/form/input[7]', By.XPATH).click()
-        bot.wait(1000)
-
-        # Botão de voltar para o menu principal
-        bot.find_element('', By.XPATH).click()
-        bot.wait(1000)
+        # # Botão de voltar para o menu principal
+        # bot.find_element('/html/body/form/input[5]', By.XPATH).click()
+        # bot.wait(1000)
 
     # Botão de ir para listar veículos
     bot.find_element('/html/body/ul/li[3]/a/button', By.XPATH).click()
