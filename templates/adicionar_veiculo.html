@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de carro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1></h1>
+    <li>
+        <a href="/"><button>retornar</button></a>
+    </li>
+    <h1>Adicionar Veiculo:</h1>
+    <form>
+        <label for="tipo_veiculo">Tipo do veiculo:</label>
+        <select name="combustivel" id="combustivel">
+            <option value=""> </option>
+            <option value="carro">Carro</option>
+            <option value="moto">Moto</option>
+        </select>
+        
+
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required>
+
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required>
+        
+        <label for="ano">Ano:</label>
+        <input type="number" id="ano" name="ano" required>
+
+        <label for="diaria">Valor da diária:</label>
+        <input type="number" id="diaria" name="diaria" required>
+
+        <label for="combustivel">Combustível:</label>
+        <input type="text" id="combustivel" name="combustivel" required>
+
+        <label for="ciliondrada">Ciliondrada:</label>
+        <input type="text" id="cc" name="cc" required>
+
+        <input type="submit" value="Alugar">
+    </form>
+</body>
+</html>
