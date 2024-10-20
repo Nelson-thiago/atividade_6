@@ -2,37 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-<<<<<<< HEAD
 from classes import Carro, Motocicleta, Veiculo
-=======
-from classes import Carro, Motocicleta
-
-import os
-
-def obter_veiculos():
-    def ler_dados():
-        caminho_arquivo = os.path.join(os.path.dirname(__file__), 'veiculos.txt')
-
-        # Verifica se o arquivo existe
-        if not os.path.exists(caminho_arquivo):
-            raise FileNotFoundError(f"Arquivo não encontrado: {caminho_arquivo}")
-
-        # Abre o arquivo e lê as linhas
-        with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
-            linhas = arquivo.readlines()
-
-        dados = []
-        for linha in linhas:
-            tipo_veiculo, marca, modelo, ano, diaria, comb, cc = linha.strip().split(',')
-            if tipo_veiculo.lower() == 'carro':
-                dados.append(Carro(marca, modelo, int(ano), float(diaria), comb))
-            elif tipo_veiculo.lower() == 'moto':
-                dados.append(Motocicleta(marca, modelo, int(ano), float(diaria), int(cc)))
-        
-        return dados
-    return ler_dados()
-
->>>>>>> 8e9c3146724f5203d80f055b027331821e177d31
 
 veiculos = []  # Define a lista de veículos globalmente
 
