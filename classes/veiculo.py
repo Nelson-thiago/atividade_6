@@ -1,5 +1,6 @@
 class Veiculo:
     total_veiculos = 0
+    lista_veiculos = []
 
     def __init__(self, tipo_veiculo, marca, modelo, ano, valor_diario,):
         self.__tipo_veiculo = tipo_veiculo
@@ -8,6 +9,7 @@ class Veiculo:
         self.__ano = ano
         self.__valor_diario = valor_diario
         Veiculo.total_veiculos += 1
+        Veiculo.lista_veiculos.append(self)
 
     @property
     def tipo_veiculo(self):

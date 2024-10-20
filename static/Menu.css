@@ -1,0 +1,89 @@
+/* Resetando alguns estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background-color: #ca1c53;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a div da logo */
+.logo {
+    text-align: center; /* Centraliza a logo horizontalmente */
+    margin-bottom: 20px; /* Espaçamento abaixo da logo */
+}
+
+/* Estilo para a imagem da logo */
+.logo img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+    height: auto; /* Mantém a proporção da imagem */
+    width: 200px; /* Ajuste para um tamanho adequado */
+    border-radius: 8px; /* Opcional: arredondar bordas da imagem */
+}
+
+/* Para telas menores  */
+@media (max-width: 768px) {
+    .logo img {
+        width: 200px; /* Reduz a imagem para caber melhor em telas menores */
+    }
+}
+
+
+button:hover {
+    
+    outline: #e92160;
+    background-color: #e92160;
+}
+
+button:focus {
+    outline: none;
+    background-color: #a9083a;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 80%;
+        padding: 10px;
+    }
+}
