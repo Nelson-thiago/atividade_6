@@ -7,7 +7,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from classes.carro import Carro
-from classes.motocicleta import Motocicleta
+from classes.motociclet import Motocicleta
 from app import obter_veiculos
 
 BotMaestroSDK.RAISE_NOT_CONNECTED = False
