@@ -1,8 +1,0 @@
-carro,Ford,Fiesta,2019,120.50,Gasolina,1600
-carro,Chevrolet,Onix,2020,150.00,Flex,1000
-carro,Toyota,Corolla,2018,200.00,Gasolina,1800
-moto,Honda,CB500,2020,100.00,Gasolina,500
-moto,Yamaha,Fazer,2019,90.00,Gasolina,250
-carro,Volkswagen,Gol,2017,110.00,Etanol,1400
-moto,BMW,S1000RR,2021,250.00,Gasolina,1000
-carro,Hyundai,HB20,2021,130.00,Flex,1000

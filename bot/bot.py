@@ -64,7 +64,7 @@ def alugar_veiculo(bot, veiculos):
     for veiculo in veiculos:
         preencher_formulario(bot, veiculo)
         bot.find_element('/html/body/div[1]/form/input[5]', By.XPATH).click()
-        bot.wait(5000)
+        bot.wait(1000)
 
         bot.find_element('/html/body/div[1]/a/button', By.XPATH).click()
         bot.wait(1000)
@@ -73,12 +73,12 @@ def alugar_veiculo(bot, veiculos):
         bot.wait(1000)
 
 def retornar_menu(bot):
-    bot.find_element('/html/body/li/a/button', By.XPATH).click()
+    bot.find_element('/html/body/div/div/a/button', By.XPATH).click()
     bot.wait(1000)
 
 def listar_veiculos(bot):
     bot.find_element('/html/body/ul/li[2]/a/button', By.XPATH).click()
-    bot.wait(10000)
+    bot.wait(3000)
 
 def main():
     # Inicialização do Maestro
