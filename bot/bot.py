@@ -12,6 +12,7 @@ from app import obter_veiculos
 
 BotMaestroSDK.RAISE_NOT_CONNECTED = False
 
+
 def iniciar_bot():
     """Inicializa o WebBot e retorna a instância."""
     bot = WebBot()
