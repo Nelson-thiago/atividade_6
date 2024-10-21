@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aluguel de Veículos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Menu.css') }}">
 </head>
 <body>
-    <h1>Gerenciamento de Veiculos:</h1>
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Zl Academy">
+    </div>
+
+    <h1>Gerenciamento de Veiculos</h1>
+    
     <ul>
         <li>
             <a href="/adicionar_veiculo"><button>Adicionar Veiculo</button></a>

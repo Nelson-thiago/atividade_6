@@ -4,51 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem dos veículos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Veiculos.css') }}">
 </head>
 <body>
     <h1>Todos os veículos</h1>
-    <li>
-        <a href="/"><button>Retornar</button></a>
-    </li>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Ano</th>
-                <th>Valor da diária</th>
-                <th>Combustível</th>
-                <th>Cilindradas</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for dados in dados %}
-            <tr>
-                <td>{{ dados.tipo_veiculo}}</td>
-                <td>{{ dados.marca }}</td>
-                <td>{{ dados.modelo }}</td>
-                <td>{{ dados.ano }}</td>
-                <td>{{ dados.valor_diario }}</td>
-                <td>
-                    {% if dados.tipo_veiculo == 'Carro' %}
-                        {{ dados.tipo_combustivel }}
-                    {% else %}
-                        <em>Não especificado</em>
-                    {% endif %}
-                </td>
-                <td>
-                    {% if dados.tipo_veiculo == 'Moto' %}
-                        {{ dados.cilindrada }}
-                    {% else %}
-                        <em>Não especificado</em>
-                    {% endif %}
-                </td>                
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <a href="/"><button class="Retornar">Retornar</button></a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Ano</th>
+                    <th>Valor da diária</th>
+                    <th>Combustível</th>
+                    <th>Cilindradas</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dados in dados %}
+                <tr>
+                    <td>{{ dados.tipo_veiculo}}</td>
+                    <td>{{ dados.marca }}</td>
+                    <td>{{ dados.modelo }}</td>
+                    <td>{{ dados.ano }}</td>
+                    <td>{{ dados.valor_diario }}</td>
+                    <td>
+                        {% if dados.tipo_veiculo == 'Carro' %}
+                            {{ dados.tipo_combustivel }}
+                        {% else %}
+                            <em>Não especificado</em>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if dados.tipo_veiculo == 'Moto' %}
+                            {{ dados.cilindrada }}
+                        {% else %}
+                            <em>Não especificado</em>
+                        {% endif %}
+                    </td>                
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
